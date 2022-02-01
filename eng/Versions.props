@@ -6,7 +6,7 @@
     <PreReleaseVersionIteration>
     </PreReleaseVersionIteration>
     <EmscriptenVersion>2.0.23</EmscriptenVersion>
-    <WorkloadSdkBandVersion>6.0.100</WorkloadSdkBandVersion>
+    <WorkloadSdkBandVersion Condition="'$(WorkloadSdkBandVersion)' == ''">6.0.100</WorkloadSdkBandVersion>
   </PropertyGroup>
   <ItemGroup>
     <WorkloadSdkBandVersions Include="6.0.100;6.0.200" />
