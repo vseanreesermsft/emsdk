@@ -8,6 +8,9 @@
     <EmscriptenVersion>2.0.23</EmscriptenVersion>
     <WorkloadSdkBandVersion>6.0.100</WorkloadSdkBandVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <WorkloadSdkBandVersions Include="6.0.100;6.0.200" />
+  </ItemGroup>
   <PropertyGroup>
     <StabilizePackageVersion Condition="'$(StabilizePackageVersion)' == ''">true</StabilizePackageVersion>
     <DotNetFinalVersionKind Condition="'$(StabilizePackageVersion)' == 'true'">release</DotNetFinalVersionKind>
