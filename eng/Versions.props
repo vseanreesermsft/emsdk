@@ -6,7 +6,7 @@
     <PreReleaseVersionIteration>
     </PreReleaseVersionIteration>
     <EmscriptenVersion>2.0.23</EmscriptenVersion>
-    <WorkloadSdkBandVersion>6.0.100</WorkloadSdkBandVersion>
+    <WorkloadSdkBandVersion>6.0.200</WorkloadSdkBandVersion>
   </PropertyGroup>
   <PropertyGroup>
     <StabilizePackageVersion Condition="'$(StabilizePackageVersion)' == ''">true</StabilizePackageVersion>
