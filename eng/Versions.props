@@ -9,7 +9,7 @@
     <WorkloadSdkBandVersion Condition="'$(WorkloadSdkBandVersion)' == ''">6.0.100</WorkloadSdkBandVersion>
   </PropertyGroup>
   <ItemGroup>
-    <WorkloadSdkBandVersions Include="6.0.100;6.0.200" />
+    <WorkloadSdkBandVersions Include="6.0.100;6.0.200;6.0.300" />
   </ItemGroup>
   <PropertyGroup>
     <StabilizePackageVersion Condition="'$(StabilizePackageVersion)' == ''">true</StabilizePackageVersion>
