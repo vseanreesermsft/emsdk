@@ -5,15 +5,15 @@
       "abstract": true,
       "description": "Emscripten SDK compiler tooling",
       "packs": [
-        "Microsoft.NET.Runtime.Emscripten.Node",
-        "Microsoft.NET.Runtime.Emscripten.Python",
-        "Microsoft.NET.Runtime.Emscripten.Sdk"
+        "Microsoft.NET.Runtime.Emscripten.Node.net6",
+        "Microsoft.NET.Runtime.Emscripten.Python.net6",
+        "Microsoft.NET.Runtime.Emscripten.Sdk.net6"
       ],
       "platforms": [ "win-x64", "linux-x64", "osx-x64", "osx-arm64" ]
     }
   },
   "packs": {
-    "Microsoft.NET.Runtime.Emscripten.Node" : {
+    "Microsoft.NET.Runtime.Emscripten.Node.net6" : {
       "kind": "Sdk",
       "version": "${PackageVersion}",
       "alias-to": {
@@ -23,7 +23,7 @@
         "osx-arm64": "Microsoft.NET.Runtime.Emscripten.${EmscriptenVersion}.Node.osx-x64"
       }
     },
-    "Microsoft.NET.Runtime.Emscripten.Python" : {
+    "Microsoft.NET.Runtime.Emscripten.Python.net6" : {
       "kind": "Sdk",
       "version": "${PackageVersion}",
       "alias-to": {
@@ -32,7 +32,7 @@
         "osx-arm64": "Microsoft.NET.Runtime.Emscripten.${EmscriptenVersion}.Python.osx-x64"
       }
     },
-    "Microsoft.NET.Runtime.Emscripten.Sdk" : {
+    "Microsoft.NET.Runtime.Emscripten.Sdk.net6" : {
       "kind": "Sdk",
       "version": "${PackageVersion}",
       "alias-to": {
