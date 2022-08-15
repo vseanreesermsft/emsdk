@@ -8,6 +8,8 @@
       <EmSdkFileName Condition="$([MSBuild]::IsOSPlatform(Windows))">emsdk.bat</EmSdkFileName>
       <NpmFileName Condition="!$([MSBuild]::IsOSPlatform(Windows))">npm</NpmFileName>
       <NpmFileName Condition="$([MSBuild]::IsOSPlatform(Windows))">npm.cmd</NpmFileName>
+      <PythonFileName Condition="!$([MSBuild]::IsOSPlatform(Windows))">python3</PythonFileName>
+      <PythonFileName Condition="$([MSBuild]::IsOSPlatform(Windows))">python.exe</PythonFileName>
       <StripCommand Condition="$([MSBuild]::IsOSPlatform(Linux))">strip -s</StripCommand>
       <StripCommand Condition="$([MSBuild]::IsOSPlatform(OSX))">strip</StripCommand>
       <UsesPythonFromEmsdk Condition="!$([MSBuild]::IsOSPlatform(Linux))">true</UsesPythonFromEmsdk>
@@ -35,9 +37,8 @@
     <ItemGroup>
       <NpmEnvironmentVariables Include="PATH=$(NpmPath)" />
     </ItemGroup>
-    <Exec WorkingDirectory="$(UpstreamEmscriptenDirectory)"
-          Command="$(NpmFileName) prune --production"
-          EnvironmentVariables="@(NpmEnvironmentVariables)" />
+    <Exec WorkingDirectory="$(RepoRoot)"
+      Command="$(PythonFileName) eng/sanitize.py $(RepoRoot)" />
 
     <!-- These symlinks are broken after npm prune -->
     <Delete Files="$(UpstreamEmscriptenDirectory)\node_modules\.bin\es-check" />
