@@ -74,7 +74,7 @@ stages:
             vmImage: windows-2019
           ${{ if eq(variables['System.TeamProject'], 'internal') }}:
             name: NetCore1ESPool-Svc-Internal
-            demands: ImageOverride -equals Build.Server.Amd64.VS2019
+            demands: ImageOverride -equals windows.vs2019.amd64
         steps:
         - powershell: |
             # update the machine cert store so that python can download the files as required by emscripten's install
