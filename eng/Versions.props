@@ -7,7 +7,6 @@
     <PreReleaseVersionLabel>servicing</PreReleaseVersionLabel>
     <PreReleaseVersionIteration>
     </PreReleaseVersionIteration>
-    <WorkloadSdkBandVersion>7.0.100</WorkloadSdkBandVersion>
     <EmscriptenVersion>3.1.12</EmscriptenVersion>
     <EmscriptenVersionNet6>2.0.23</EmscriptenVersionNet6>
     <PackageVersionNet6>6.0.11</PackageVersionNet6>
@@ -26,4 +25,7 @@
     <SwixPackageVersion>1.1.87-gba258badda</SwixPackageVersion>
     <WixPackageVersion>1.0.0-v3.14.0.5722</WixPackageVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <WorkloadSdkBandVersions Include="7.0.100" SupportsMachineArch="true" />
+  </ItemGroup>
 </Project>
