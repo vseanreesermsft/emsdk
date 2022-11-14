@@ -3,29 +3,29 @@
   <ProductDependencies>
   </ProductDependencies>
   <ToolsetDependencies>
-    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="6.0.0-beta.22512.3">
+    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="6.0.0-beta.22561.1">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>bb1e72113a7eaf8bebda940beba8cf8bee1b453f</Sha>
+      <Sha>0967701e5527a1be21d9473821077c3f4be7f9dc</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Helix.Sdk" Version="6.0.0-beta.22512.3">
+    <Dependency Name="Microsoft.DotNet.Helix.Sdk" Version="6.0.0-beta.22561.1">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>bb1e72113a7eaf8bebda940beba8cf8bee1b453f</Sha>
+      <Sha>0967701e5527a1be21d9473821077c3f4be7f9dc</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Build.Tasks.Packaging" Version="6.0.0-beta.22512.3">
+    <Dependency Name="Microsoft.DotNet.Build.Tasks.Packaging" Version="6.0.0-beta.22561.1">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>bb1e72113a7eaf8bebda940beba8cf8bee1b453f</Sha>
+      <Sha>0967701e5527a1be21d9473821077c3f4be7f9dc</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Build.Tasks.Templating" Version="6.0.0-beta.22512.3">
+    <Dependency Name="Microsoft.DotNet.Build.Tasks.Templating" Version="6.0.0-beta.22561.1">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>bb1e72113a7eaf8bebda940beba8cf8bee1b453f</Sha>
+      <Sha>0967701e5527a1be21d9473821077c3f4be7f9dc</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Build.Tasks.Installers" Version="6.0.0-beta.22512.3">
+    <Dependency Name="Microsoft.DotNet.Build.Tasks.Installers" Version="6.0.0-beta.22561.1">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>bb1e72113a7eaf8bebda940beba8cf8bee1b453f</Sha>
+      <Sha>0967701e5527a1be21d9473821077c3f4be7f9dc</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Build.Tasks.Workloads" Version="6.0.0-beta.22512.3">
+    <Dependency Name="Microsoft.DotNet.Build.Tasks.Workloads" Version="6.0.0-beta.22561.1">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>bb1e72113a7eaf8bebda940beba8cf8bee1b453f</Sha>
+      <Sha>0967701e5527a1be21d9473821077c3f4be7f9dc</Sha>
     </Dependency>
   </ToolsetDependencies>
 </Dependencies>
