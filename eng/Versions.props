@@ -4,7 +4,7 @@
     <MajorVersion>6</MajorVersion>
     <MinorVersion>0</MinorVersion>
     <PatchVersion>22</PatchVersion>
-    <VersionPrefix>6.0.22</VersionPrefix>
+    <VersionPrefix>6.0.23</VersionPrefix>
     <PreReleaseVersionLabel>rtm</PreReleaseVersionLabel>
     <PreReleaseVersionIteration>
     </PreReleaseVersionIteration>
