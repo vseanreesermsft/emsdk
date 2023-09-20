@@ -39,7 +39,7 @@
     <MicrosoftNETCoreRuntimeWasmEmscriptenTransportVersion>8.0.0-rtm.23468.5</MicrosoftNETCoreRuntimeWasmEmscriptenTransportVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <StabilizePackageVersion Condition="'$(StabilizePackageVersion)' == ''">true</StabilizePackageVersion>
+    <StabilizePackageVersion Condition="'$(StabilizePackageVersion)' == ''">false</StabilizePackageVersion>
     <DotNetFinalVersionKind Condition="'$(StabilizePackageVersion)' == 'true'">release</DotNetFinalVersionKind>
   </PropertyGroup>
   <PropertyGroup>
