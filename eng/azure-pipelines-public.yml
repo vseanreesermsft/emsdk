@@ -283,13 +283,3 @@ stages:
           condition: ne(variables['SkipPublishWorkloads'], 'true')
         - powershell: $(CheckNuGetSizesScript)
           displayName: Check NuGet sizes
-
-############ POST BUILD ARCADE LOGIC ############
-- ${{ if and(ne(variables['System.TeamProject'], 'public'), ne(variables['Build.Reason'], 'PullRequest')) }}:
-  - template: /eng/common/templates/post-build/post-build.yml
-    parameters:
-      publishingInfraVersion: 3
-      enableSourceLinkValidation: false
-      enableSigningValidation: false
-      enableSymbolValidation: false
-      enableNugetValidation: true
