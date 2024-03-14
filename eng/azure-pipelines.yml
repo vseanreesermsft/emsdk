@@ -288,9 +288,8 @@ extends:
               displayName: Check NuGet sizes
 
     ############ POST BUILD ARCADE LOGIC ############
-    - template: /eng/common/templates/post-build/post-build.yml
+    - template: /eng/common/templates-official/post-build/post-build.yml
       parameters:
-        publishingInfraVersion: 3
         enableSourceLinkValidation: false
         enableSigningValidation: false
         enableSymbolValidation: false
