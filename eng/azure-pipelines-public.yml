@@ -64,44 +64,13 @@ stages:
         - powershell: $(CheckNuGetSizesScript)
           displayName: Check NuGet sizes
 
-      # Only run in case of in-build signing
-      - ${{ if and(ne(variables['System.TeamProject'], 'public'), ne(variables['Build.Reason'], 'PullRequest'), ne(variables['PostBuildSign'], 'true')) }}:
-        - job: Sign_macOS
-          dependsOn: Build_macOS
-          displayName: Sign macOS
-          timeoutInMinutes: 30
-          pool:
-            name: $(DncEngInternalBuildPool)
-            demands: ImageOverride -equals windows.vs2022.amd64
-          strategy:
-            matrix:
-              x64:
-                assetManifestOS: osx
-                assetManifestPlatform: x64
-              arm64:
-                assetManifestOS: osx
-                assetManifestPlatform: arm64
-          steps:
-          - task: DownloadPipelineArtifact@2
-            inputs:
-              artifact: Packages_macOS_$(assetManifestPlatform)
-              path: 'artifacts/packages'
-
-          - powershell: |
-              ./eng/common/build.ps1 -ci -configuration $(_BuildConfig) -restore -sign -publish /p:PackageRID=$(assetManifestOS)-$(assetManifestPlatform) /p:AssetManifestOS=$(assetManifestOS) /p:PlatformName=$(assetManifestPlatform) $(_InternalBuildArgs)
-            displayName: Sign and Publish
-
       ############ Linux BUILD ############
       - job: Build_Linux
         displayName: Linux
         timeoutInMinutes: 120
         pool:
-          ${{ if eq(variables['System.TeamProject'], 'public') }}:
-            name: $(DncEngPublicBuildPool)
-            demands: ImageOverride -equals build.ubuntu.2204.amd64.open
-          ${{ if eq(variables['System.TeamProject'], 'internal') }}:
-            name: $(DncEngInternalBuildPool)
-            demands: ImageOverride -equals build.ubuntu.2204.amd64
+          name: $(DncEngPublicBuildPool)
+          demands: ImageOverride -equals build.ubuntu.2204.amd64.open
         strategy:
           matrix:
             x64:
@@ -132,50 +101,13 @@ stages:
         - powershell: $(CheckNuGetSizesScript)
           displayName: Check NuGet sizes
 
-      # Only run in case of in-build signing
-      - ${{ if and(ne(variables['System.TeamProject'], 'public'), ne(variables['Build.Reason'], 'PullRequest'), ne(variables['PostBuildSign'], 'true')) }}:
-        - job: Sign_Linux
-          dependsOn: Build_Linux
-          displayName: Sign Linux
-          timeoutInMinutes: 30
-          pool:
-            name: $(DncEngInternalBuildPool)
-            demands: ImageOverride -equals windows.vs2022.amd64
-          strategy:
-            matrix:
-              x64:
-                assetManifestOS: linux
-                assetManifestPlatform: x64
-              arm64:
-                assetManifestOS: linux
-                assetManifestPlatform: arm64
-              x64_musl:
-                assetManifestOS: linux-musl
-                assetManifestPlatform: x64
-              arm64_musl:
-                assetManifestOS: linux-musl
-                assetManifestPlatform: arm64
-          steps:
-          - task: DownloadPipelineArtifact@2
-            inputs:
-              artifact: Packages_$(assetManifestOS)_$(assetManifestPlatform)
-              path: 'artifacts/packages'
-
-          - powershell: |
-              ./eng/common/build.ps1 -ci -configuration $(_BuildConfig) -restore -sign -publish /p:PackageRID=$(assetManifestOS)-$(assetManifestPlatform) /p:AssetManifestOS=$(assetManifestOS) /p:PlatformName=$(assetManifestPlatform) $(_InternalBuildArgs)
-            displayName: Sign and Publish
-
       ############ Windows BUILD ############
       - job: Build_Windows
         displayName: Windows
         timeoutInMinutes: 120
         pool:
-          ${{ if eq(variables['System.TeamProject'], 'public') }}:
-            name: $(DncEngPublicBuildPool)
-            demands: ImageOverride -equals windows.vs2022.amd64.open
-          ${{ if eq(variables['System.TeamProject'], 'internal') }}:
-            name: $(DncEngInternalBuildPool)
-            demands: ImageOverride -equals windows.vs2022.amd64
+          name: $(DncEngPublicBuildPool)
+          demands: ImageOverride -equals windows.vs2022.amd64.open
         strategy:
           matrix:
             x64:
@@ -218,12 +150,8 @@ stages:
           - Build_Windows
         timeoutInMinutes: 120
         pool:
-          ${{ if eq(variables['System.TeamProject'], 'public') }}:
-            name: $(DncEngPublicBuildPool)
-            demands: ImageOverride -equals windows.vs2022.amd64.open
-          ${{ if eq(variables['System.TeamProject'], 'internal') }}:
-            name: $(DncEngInternalBuildPool)
-            demands: ImageOverride -equals windows.vs2022.amd64
+          name: $(DncEngPublicBuildPool)
+          demands: ImageOverride -equals windows.vs2022.amd64.open
         strategy:
           matrix:
             x64:
