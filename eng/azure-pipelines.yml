@@ -325,7 +325,7 @@ extends:
                 artifact: Packages_win_arm64
                 path: 'artifacts/packages'
             - script: |
-                .\build.cmd -arch x64 -restore -build -pack -ci -configuration $(_BuildConfig) -sign /p:SkipBuild=true /p:PackageRID=win-x64 /p:AssetManifestFileName=win-workloads.xml /p:AssetManifestOS=win /p:PlatformName=x64 /p:workloadPackagesPath=$(Build.SourcesDirectory)\artifacts\packages\windows\Shipping $(_InternalBuildArgs)
+                .\build.cmd -arch x64 -restore -build -pack -ci -configuration $(_BuildConfig) -sign -publish /p:SkipBuild=true /p:PackageRID=win-x64 /p:AssetManifestFileName=win-workloads.xml /p:AssetManifestOS=win /p:PlatformName=x64 /p:workloadPackagesPath=$(Build.SourcesDirectory)\artifacts\packages\windows\Shipping $(_InternalBuildArgs)
               displayName: Build and Publish
             - task: CopyFiles@2
               displayName: Prepare job-specific intermediate artifacts subdirectory
