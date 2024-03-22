@@ -23,6 +23,8 @@ trigger:
     - main
     - release/*
 
+pr: none
+
 resources:
   repositories:
   - repository: 1ESPipelineTemplates
