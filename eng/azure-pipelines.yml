@@ -363,7 +363,6 @@ extends:
                 targetPath: $(Build.SourcesDirectory)/artifacts/VSSetup/$(_BuildConfig)/Insertion/
                 artifactName: 'Workloads'
               continueOnError: true
-              condition: ne(variables['SkipPublishWorkloads'], 'true')
             - powershell: $(CheckNuGetSizesScript)
               displayName: Check NuGet sizes
 
