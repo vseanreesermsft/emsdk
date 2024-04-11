@@ -24,7 +24,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <SwixPackageVersion>1.1.87-gba258badda</SwixPackageVersion>
-    <WixPackageVersion>3.14.0-8606.20240208.1</WixPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <WorkloadSdkBandVersions Include="7.0.100" SupportsMachineArch="true" />
