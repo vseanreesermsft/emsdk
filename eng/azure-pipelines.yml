@@ -38,6 +38,8 @@ extends:
     featureFlags:
       autoBaseline: true
     sdl:
+      policheck:
+        enabled: true
       binskim:
         enabled: true
         scanOutputDirectoryOnly: true
